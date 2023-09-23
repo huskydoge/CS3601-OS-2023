@@ -132,7 +132,7 @@ Dump of assembler code for function phase_1:
    0x0000000000400760 <+0>:	stp	x29, x30, [sp, #-16]!
    0x0000000000400764 <+4>:	mov	x29, sp
    0x0000000000400768 <+8>:	adrp	x1, 0x4a0000
-=> 0x000000000040076c <+12>:	ldr	x1, [x1, #88]  // at this point, x0 = 4858168, x1 = 4605968
+=> 0x000000000040076c <+12>:	ldr	x1, [x1, #88]  // at this point, x0 = 4858168, x1 = 4605968, irrelevant to the input
    0x0000000000400770 <+16>:	bl	0x421b80 <strcmp>
    0x0000000000400774 <+20>:	cbnz	w0, 0x400780 <phase_1+32> // w0 not equal to zero, then explode
    0x0000000000400778 <+24>:	ldp	x29, x30, [sp], #16
