@@ -83,8 +83,10 @@ Dump of assembler code for function read_int:
    0x0000000000400bfc <+40>:	ret
    0x0000000000400c00 <+44>:	bl	0x400af4 <explode>
 End of assembler dump.
-
 ```
+
+* Check whether input number for phase_0 is less than 0, if so, explode.
+* Return value in w0 register
 
 ## Common Problems 
 1. When `sudo apt install qemu-user`, terminal shows that somepackages fail to be downloaded due to 404 error.
