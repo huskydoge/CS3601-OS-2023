@@ -134,9 +134,9 @@ Dump of assembler code for function strcmp:
    0x0000000000421bd0 <+80>:	clz	x9, x6
    0x0000000000421bd4 <+84>:	lsl	x2, x2, x9
    0x0000000000421bd8 <+88>:	lsl	x3, x3, x9
-   0x0000000000421bdc <+92>:	lsr	x2, x2, #56 // x2 = 7089903863574036480
+   0x0000000000421bdc <+92>:	lsr	x2, x2, #56 // after this instruction, x2 = 98, x3 = -7596825387575433526
    0x0000000000421be0 <+96>:	sub	x0, x2, x3, lsr #56
-   0x0000000000421be4 <+100>:	ret
+   0x0000000000421be4 <+100>:	ret // at this point, x0 = -52
    0x0000000000421be8 <+104>:	nop
    0x0000000000421bec <+108>:	nop
    0x0000000000421bf0 <+112>:	and	x0, x0, #0xfffffffffffffff8
