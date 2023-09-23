@@ -9,3 +9,14 @@ Shanghai Jiao Tong University 2023-2024, CS3601 Operating System
 ### Textbook and References
 
 * [现代操作系统](https://libgen.li/ads.php?md5=38B25407BFB3AA5DE86EB071B1753D01)，陈海波 / 夏虞斌
+
+
+
+
+**At present, all the tools we provide need to run under the x86_64 architecture. Students who use M1/M2 may need to prepare an x86_64 operating environment.**
+
+### VMware 17
+[Download VMware 17](https://www.vmware.com/go/getworkstation-win)
+
+key: MC60H-DWHD5-H80U9-6V85M-8280D
+
