@@ -20,3 +20,8 @@ Shanghai Jiao Tong University 2023-2024, CS3601 Operating System
 
 key: MC60H-DWHD5-H80U9-6V85M-8280D
 
+### Reference
+* [Git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+* [Pro Git](https://git-scm.com/book/zh/v2)
+* [learning git branching](https://learngitbranching.js.org/?locale=zh_CN )
+* [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
