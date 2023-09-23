@@ -85,7 +85,7 @@ End of assembler dump.
 
 ```
 
-### Phase0
+### Phase_0
 
 ```assembly
 Dump of assembler code for function phase_0:
