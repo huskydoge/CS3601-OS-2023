@@ -149,21 +149,23 @@ Dump of assembler code for function phase_1:
 ```assembly
 Dump of assembler code for function strcmp:
 => 0x0000000000421b80 <+0>:	nop
-   0x0000000000421b84 <+4>:	sub	x10, x1, x0 // x10 = -252200 = 0xffff ffff fffc 26d8
-   0x0000000000421b88 <+8>:	mov	x8, #0x101010101010101     	// #72340172838076673
-   0x0000000000421b8c <+12>:	and	x6, x0, #0x7 // x6 = 0
+   0x0000000000421b84 <+4>:	sub	x10, x1, x0 // x10 = -252200 = 0xffff ffff fffc 26d8, fixed
+   0x0000000000421b88 <+8>:	mov	x8, #0x101010101010101     	// #72340172838076673, fixed
+   0x0000000000421b8c <+12>:	and	x6, x0, #0x7 // x6 = 0, fixed
    0x0000000000421b90 <+16>:	tst	x10, #0x7,  // 
    0x0000000000421b94 <+20>:	b.ne	0x421c14 <strcmp+148>  // b.any, b not equal to zero. Because b is equal to zero(x10 least 3 bits are 000), not jump
    0x0000000000421b98 <+24>:	cbnz	x6, 0x421bf0 <strcmp+112> // x6 = 0, not jump
    0x0000000000421b9c <+28>:	nop 
-   0x0000000000421ba0 <+32>:	ldr	x3, [x0, x10] // x3 = 7298963055962179915
-   0x0000000000421ba4 <+36>:	ldr	x2, [x0], #8  // x2 = 3355185
+   0x0000000000421ba0 <+32>:	ldr	x3, [x0, x10] // x3 = 7298963055962179915, maybe not fixed
+   0x0000000000421ba4 <+36>:	ldr	x2, [x0], #8  // x2 = 3355185, maybe not fixed
    0x0000000000421ba8 <+40>:	sub	x4, x2, x8    // x4 = -72340172834721488
    0x0000000000421bac <+44>:	orr	x6, x2, #0x7f7f7f7f7f7f7f7f   
    0x0000000000421bb0 <+48>:	bics	x4, x4, x6   // x4 = .....
+
    0x0000000000421bb4 <+52>:	ccmp	x2, x3, #0x0, eq  // eq = none, if eq satisfied, then carry out comparison else dismiss
    0x0000000000421bb8 <+56>:	b.eq	0x421ba0 <strcmp+32>  // b.none
-   0x0000000000421bbc <+60>:	eor	x5, x2, x3
+
+   0x0000000000421bbc <+60>:	eor	x5, x2, x3  
    0x0000000000421bc0 <+64>:	orr	x6, x5, x4
    0x0000000000421bc4 <+68>:	rev	x6, x6
    0x0000000000421bc8 <+72>:	rev	x2, x2
