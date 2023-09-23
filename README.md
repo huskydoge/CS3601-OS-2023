@@ -25,3 +25,4 @@ key: MC60H-DWHD5-H80U9-6V85M-8280D
 * [Pro Git](https://git-scm.com/book/zh/v2)
 * [learning git branching](https://learngitbranching.js.org/?locale=zh_CN )
 * [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
+* [ARM Instructions](https://ipads.se.sjtu.edu.cn/courses/os/reference/arm_isa.pdf)
