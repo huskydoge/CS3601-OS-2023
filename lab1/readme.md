@@ -62,20 +62,23 @@ End of assembler dump.
    0x0000000000400b30 <+32>:	bl	0x413510 <fgets>
    0x0000000000400b34 <+36>:	mov	x0, #0x0                   	// #0
    0x0000000000400b38 <+40>:	adrp	x2, 0x4a2000 <_IO_helper_jumps+96>
-   0x0000000000400b3c <+44>:	add	x2, x2, #0x138
-   0x0000000000400b40 <+48>:	ldrb	w1, [x0, x2]
+   0x0000000000400b3c <+44>:	add	x2, x2, #0x138  // x2 = 4858168，input phase_1 = 1
+
+   0x0000000000400b40 <+48>:	ldrb	w1, [x0, x2] // w1 = 49, 10, 
    0x0000000000400b44 <+52>:	cbz	w1, 0x400b6c <read_line+92>
    0x0000000000400b48 <+56>:	cmp	w1, #0xa
-   0x0000000000400b4c <+60>:	b.eq	0x400b60 <read_line+80>  // b.none
-   0x0000000000400b50 <+64>:	add	x0, x0, #0x1
+   0x0000000000400b4c <+60>:	b.eq	0x400b60 <read_line+80>  // b.none, when w1 = 10, jump!
+   0x0000000000400b50 <+64>:	add	x0, x0, #0x1 // x0 = 1
    0x0000000000400b54 <+68>:	cmp	x0, #0x50
-   0x0000000000400b58 <+72>:	b.ne	0x400b40 <read_line+48>  // b.any
+   0x0000000000400b58 <+72>:	b.ne	0x400b40 <read_line+48>  // b.any, for loop, everytime x0 ++
+
    0x0000000000400b5c <+76>:	bl	0x400af4 <explode>
    0x0000000000400b60 <+80>:	adrp	x1, 0x4a2000 <_IO_helper_jumps+96>
-   0x0000000000400b64 <+84>:	add	x1, x1, #0x138
-   0x0000000000400b68 <+88>:	strb	wzr, [x1, w0, sxtw]
+   0x0000000000400b64 <+84>:	add	x1, x1, #0x138 // x1 = 4857856, input phase_1 = 1
+   0x0000000000400b68 <+88>:	strb	wzr, [x1, w0, sxtw] // wzr, 32 bit to clear int to zero; xzr, 64 bit to clear long to zero
+   // store 0 to [x1 + 2 * w0] = [x1 + 2]
    0x0000000000400b6c <+92>:	adrp	x0, 0x4a2000 <_IO_helper_jumps+96>
-   0x0000000000400b70 <+96>:	add	x0, x0, #0x138
+   0x0000000000400b70 <+96>:	add	x0, x0, #0x138 # x0 = 4858168, input phase_1 = 1
    0x0000000000400b74 <+100>:	ldp	x29, x30, [sp], #16
    0x0000000000400b78 <+104>:	ret
 
