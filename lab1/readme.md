@@ -62,7 +62,7 @@ End of assembler dump.
    0x0000000000400b30 <+32>:	bl	0x413510 <fgets>
    0x0000000000400b34 <+36>:	mov	x0, #0x0                   	// #0
    0x0000000000400b38 <+40>:	adrp	x2, 0x4a2000 <_IO_helper_jumps+96>
-   0x0000000000400b3c <+44>:	add	x2, x2, #0x138  // x2 = 4858168，input phase_1 = 1
+   0x0000000000400b3c <+44>:	add	x2, x2, #0x138  // x2 = 4858168，input phase_1 = 1; the same value with input = 2
 
    0x0000000000400b40 <+48>:	ldrb	w1, [x0, x2] // w1 = 49, 10, 
    0x0000000000400b44 <+52>:	cbz	w1, 0x400b6c <read_line+92>
