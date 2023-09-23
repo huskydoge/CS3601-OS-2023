@@ -67,6 +67,24 @@ End of assembler dump.
 
 ```
 
+#### <read_int>
+```assembly
+Dump of assembler code for function read_int:
+   0x0000000000400bd4 <+0>:	stp	x29, x30, [sp, #-32]!
+   0x0000000000400bd8 <+4>:	mov	x29, sp
+   0x0000000000400bdc <+8>:	add	x2, sp, #0x1c
+   0x0000000000400be0 <+12>:	adrp	x1, 0x464000 <free_mem+64>
+   0x0000000000400be4 <+16>:	add	x1, x1, #0x850
+=> 0x0000000000400be8 <+20>:	bl	0x406d80 <__isoc99_sscanf>
+   0x0000000000400bec <+24>:	cmp	w0, #0x0
+   0x0000000000400bf0 <+28>:	b.le	0x400c00 <read_int+44>
+   0x0000000000400bf4 <+32>:	ldr	w0, [sp, #28]
+   0x0000000000400bf8 <+36>:	ldp	x29, x30, [sp], #32
+   0x0000000000400bfc <+40>:	ret
+   0x0000000000400c00 <+44>:	bl	0x400af4 <explode>
+End of assembler dump.
+
+```
 
 ## Common Problems 
 1. When `sudo apt install qemu-user`, terminal shows that somepackages fail to be downloaded due to 404 error.
