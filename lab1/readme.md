@@ -67,7 +67,7 @@ End of assembler dump.
 
 ```
 
-#### <read_int>
+#### read_int
 ```assembly
 Dump of assembler code for function read_int:
    0x0000000000400bd4 <+0>:	stp	x29, x30, [sp, #-32]!
@@ -88,32 +88,35 @@ End of assembler dump.
 * Check whether input number for phase_0 is less than 0, if so, explode.
 * Return value in w0 register
 
-## Phase_1
+### Phase_1
 
 ```assembly
 Dump of assembler code for function phase_1:
    0x0000000000400760 <+0>:	stp	x29, x30, [sp, #-16]!
    0x0000000000400764 <+4>:	mov	x29, sp
    0x0000000000400768 <+8>:	adrp	x1, 0x4a0000
-=> 0x000000000040076c <+12>:	ldr	x1, [x1, #88]
+=> 0x000000000040076c <+12>:	ldr	x1, [x1, #88]  // at this point, x0 = 4858168, x1 = 4605968
    0x0000000000400770 <+16>:	bl	0x421b80 <strcmp>
-   0x0000000000400774 <+20>:	cbnz	w0, 0x400780 <phase_1+32>
+   0x0000000000400774 <+20>:	cbnz	w0, 0x400780 <phase_1+32> // w0 not equal to zero, then explode
    0x0000000000400778 <+24>:	ldp	x29, x30, [sp], #16
    0x000000000040077c <+28>:	ret
    0x0000000000400780 <+32>:	bl	0x400af4 <explode>
    0x0000000000400784 <+36>:	b	0x400778 <phase_1+24>
+
 ```
 
-### <strcmp>
+
+#### strcmp
+
 
 ```assembly
 Dump of assembler code for function strcmp:
 => 0x0000000000421b80 <+0>:	nop
-   0x0000000000421b84 <+4>:	sub	x10, x1, x0
+   0x0000000000421b84 <+4>:	sub	x10, x1, x0 // x10 = -252200
    0x0000000000421b88 <+8>:	mov	x8, #0x101010101010101     	// #72340172838076673
-   0x0000000000421b8c <+12>:	and	x6, x0, #0x7
-   0x0000000000421b90 <+16>:	tst	x10, #0x7
-   0x0000000000421b94 <+20>:	b.ne	0x421c14 <strcmp+148>  // b.any
+   0x0000000000421b8c <+12>:	and	x6, x0, #0x7 // x6 = 0
+   0x0000000000421b90 <+16>:	tst	x10, #0x7,  //
+   0x0000000000421b94 <+20>:	b.ne	0x421c14 <strcmp+148>  // b.any, at least a "1" in least 3 bits 
    0x0000000000421b98 <+24>:	cbnz	x6, 0x421bf0 <strcmp+112>
    0x0000000000421b9c <+28>:	nop
    0x0000000000421ba0 <+32>:	ldr	x3, [x0, x10]
@@ -129,7 +132,6 @@ Dump of assembler code for function strcmp:
    0x0000000000421bc8 <+72>:	rev	x2, x2
    0x0000000000421bcc <+76>:	rev	x3, x3
    0x0000000000421bd0 <+80>:	clz	x9, x6
---Type <RET> for more, q to quit, c to continue without paging--c
    0x0000000000421bd4 <+84>:	lsl	x2, x2, x9
    0x0000000000421bd8 <+88>:	lsl	x3, x3, x9
    0x0000000000421bdc <+92>:	lsr	x2, x2, #56
