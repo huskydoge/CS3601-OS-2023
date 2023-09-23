@@ -13,7 +13,7 @@ In general, the `finish` command helps you exit the current function, the `next`
 * `"delete < breakpoint 1> < breakpoint 2>..."` : This will clear multiple breakpoints specified.
   
 ## Assembly Code
-```
+```assembly
 Dump of assembler code for function main:
    0x0000000000400694 <+0>:	stp	x29, x30, [sp, #-16]!
    0x0000000000400698 <+4>:	mov	x29, sp
@@ -48,6 +48,24 @@ End of assembler dump.
 
 ```
 
+### Phase0
+
+```assembly
+Dump of assembler code for function phase_0:
+   0x0000000000400734 <+0>:	stp	x29, x30, [sp, #-16]!
+   0x0000000000400738 <+4>:	mov	x29, sp
+=> 0x000000000040073c <+8>:	bl	0x400bd4 <read_int>
+   0x0000000000400740 <+12>:	adrp	x1, 0x4a0000
+   0x0000000000400744 <+16>:	ldr	w1, [x1, #84]
+   0x0000000000400748 <+20>:	cmp	w1, w0
+   0x000000000040074c <+24>:	b.ne	0x400758 <phase_0+36>  // b.any
+   0x0000000000400750 <+28>:	ldp	x29, x30, [sp], #16
+   0x0000000000400754 <+32>:	ret
+   0x0000000000400758 <+36>:	bl	0x400af4 <explode>
+   0x000000000040075c <+40>:	b	0x400750 <phase_0+28>
+End of assembler dump.
+
+```
 
 
 ## Common Problems 
