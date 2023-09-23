@@ -52,7 +52,7 @@ End of assembler dump.
 
 ```
 
-### readline
+### readline (C function)
 
 ```assembly
   0x0000000000400b10 <+0>:	stp	x29, x30, [sp, #-16]!
@@ -147,7 +147,7 @@ Dump of assembler code for function phase_1:
 ```
 
 
-#### strcmp
+#### strcmp (C function)
 
 
 ```assembly
@@ -232,6 +232,12 @@ Dump of assembler code for function strcmp:
    0x0000000000421cac <+300>:	sub	x0, x2, x3
    0x0000000000421cb0 <+304>:	ret
 End of assembler dump.
+
+```
+
+### Phase_2
+
+```
 
 ```
 
