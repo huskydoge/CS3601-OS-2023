@@ -1,3 +1,7 @@
+## Address already used？
+* find the corresponding process of a port: `lsof -i: port`
+* kill process: `kill -9 PID`
+  
 ## GDB
 
 ### Enter and Step out a Function
