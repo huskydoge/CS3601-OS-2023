@@ -1,7 +1,17 @@
 ## Address already used？
 * find the corresponding process of a port: `lsof -i: port`
 * kill process: `kill -9 PID`
-  
+
+
+## Assembly Grammar
+
+### address
+
+* Base addressing mode `[rb]` 
+* Base address plus offset mode `[rb, offset]`
+* Pre-index addressing (update base address before addressing operation) `[rb, offset]!`: rb += Offset; Addressing M[rb] 
+* Post-indexed addressing (update base address after addressing operation) `[rb], offset`:  M[rb]; rb += Offset
+
 ## GDB
 
 ### Enter and Step out a Function
