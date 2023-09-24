@@ -266,7 +266,7 @@ End of assembler dump.
    0x00000000004007c4 <+60>:	add	x19, x19, #0x4
    0x00000000004007c8 <+64>:	cmp	x19, x20
    0x00000000004007cc <+68>:	b.eq	0x4007f4 <phase_2+108>  // b.none
-   0x00000000004007d0 <+72>:	ldr	w0, [x19]
+   0x00000000004007d0 <+72>:	ldr	w0, [x19]  // here is a loop, meaning: x[i+2] = x[i] + x[i+1] + 2
    0x00000000004007d4 <+76>:	ldr	w1, [x19, #4]
    0x00000000004007d8 <+80>:	add	w0, w0, w1
    0x00000000004007dc <+84>:	add	w0, w0, #0x2
@@ -306,6 +306,12 @@ End of assembler dump.
    0x0000000000400bc8 <+76>:	add	sp, sp, #0x20
    0x0000000000400bcc <+80>:	ret
    0x0000000000400bd0 <+84>:	bl	0x400af4 <explode>
+
+```
+
+### Phase_3
+
+```assembly
 
 ```
 
