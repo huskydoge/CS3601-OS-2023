@@ -2,6 +2,8 @@
 * find the corresponding process of a port: `lsof -i: port`
 * kill process: `kill -9 PID`
 
+## ASCII编码表
+https://blog.csdn.net/yueyueniaolzp/article/details/82178954
 
 ## Assembly Grammar
 
@@ -510,13 +512,13 @@ input string -> encode1 -> encode2 = encoded string: `isggstsvkw`
 #### func_5
 
 ```assembly
-0x0000000000400a4c <+0>:	cbz	x1, 0x400ab8 <func_5+108>
+   0x0000000000400a4c <+0>:	cbz	x1, 0x400ab8 <func_5+108> //x1 = 1, not jump 
    0x0000000000400a50 <+4>:	stp	x29, x30, [sp, #-32]!
    0x0000000000400a54 <+8>:	mov	x29, sp
    0x0000000000400a58 <+12>:	stp	x19, x20, [sp, #16]
-   0x0000000000400a5c <+16>:	mov	w20, w0
-   0x0000000000400a60 <+20>:	mov	x19, x1
-   0x0000000000400a64 <+24>:	ldr	w0, [x1]
+   0x0000000000400a5c <+16>:	mov	w20, w0 // w0 = 2023
+   0x0000000000400a60 <+20>:	mov	x19, x1  
+   0x0000000000400a64 <+24>:	ldr	w0, [x1] //
    0x0000000000400a68 <+28>:	cmp	w0, w20
    0x0000000000400a6c <+32>:	b.eq	0x400a98 <func_5+76>  // b.none
    0x0000000000400a70 <+36>:	ldr	w0, [x19]
