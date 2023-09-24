@@ -488,6 +488,60 @@ input string -> encode1 -> encode2 = encoded string: `isggstsvkw`
 * encoder1: For a string, if the length is odd, it is truncated to even. Then take all the odd digits and put them at the top (starting with the left to right subscript 1), and then take all the even digits
 * encoder2: char map, key: `qwertyuiopasdfghjklzxcvbnm`, x = 97 + key.index(char), char is in the encoded string, x is originial string after encoder1.
 
+### Phase_5
+
+```assembly
+   0x0000000000400ac0 <+0>:	stp	x29, x30, [sp, #-16]!
+   0x0000000000400ac4 <+4>:	mov	x29, sp
+=> 0x0000000000400ac8 <+8>:	bl	0x400bd4 <read_int>
+   0x0000000000400acc <+12>:	adrp	x1, 0x4a0000
+   0x0000000000400ad0 <+16>:	add	x1, x1, #0x58
+   0x0000000000400ad4 <+20>:	add	x1, x1, #0x18
+   0x0000000000400ad8 <+24>:	bl	0x400a4c <func_5>
+   0x0000000000400adc <+28>:	cmp	w0, #0x3
+   0x0000000000400ae0 <+32>:	b.ne	0x400aec <phase_5+44>  // b.any
+   0x0000000000400ae4 <+36>:	ldp	x29, x30, [sp], #16
+   0x0000000000400ae8 <+40>:	ret
+   0x0000000000400aec <+44>:	bl	0x400af4 <explode>
+   0x0000000000400af0 <+48>:	b	0x400ae4 <phase_5+36>
+
+```
+
+#### func_5
+
+```assembly
+0x0000000000400a4c <+0>:	cbz	x1, 0x400ab8 <func_5+108>
+   0x0000000000400a50 <+4>:	stp	x29, x30, [sp, #-32]!
+   0x0000000000400a54 <+8>:	mov	x29, sp
+   0x0000000000400a58 <+12>:	stp	x19, x20, [sp, #16]
+   0x0000000000400a5c <+16>:	mov	w20, w0
+   0x0000000000400a60 <+20>:	mov	x19, x1
+   0x0000000000400a64 <+24>:	ldr	w0, [x1]
+   0x0000000000400a68 <+28>:	cmp	w0, w20
+   0x0000000000400a6c <+32>:	b.eq	0x400a98 <func_5+76>  // b.none
+   0x0000000000400a70 <+36>:	ldr	w0, [x19]
+   0x0000000000400a74 <+40>:	cmp	w0, w20
+   0x0000000000400a78 <+44>:	b.le	0x400aa0 <func_5+84>
+   0x0000000000400a7c <+48>:	ldr	x1, [x19, #8]
+   0x0000000000400a80 <+52>:	mov	w0, w20
+   0x0000000000400a84 <+56>:	bl	0x400a4c <func_5>
+   0x0000000000400a88 <+60>:	lsl	w0, w0, #1
+   0x0000000000400a8c <+64>:	ldp	x19, x20, [sp, #16]
+   0x0000000000400a90 <+68>:	ldp	x29, x30, [sp], #32
+   0x0000000000400a94 <+72>:	ret
+   0x0000000000400a98 <+76>:	bl	0x400af4 <explode>
+   0x0000000000400a9c <+80>:	b	0x400a70 <func_5+36>
+   0x0000000000400aa0 <+84>:	ldr	x1, [x19, #16]
+   0x0000000000400aa4 <+88>:	mov	w0, w20
+   0x0000000000400aa8 <+92>:	bl	0x400a4c <func_5>
+   0x0000000000400aac <+96>:	lsl	w0, w0, #1
+   0x0000000000400ab0 <+100>:	add	w0, w0, #0x1
+   0x0000000000400ab4 <+104>:	b	0x400a8c <func_5+64>
+   0x0000000000400ab8 <+108>:	mov	w0, #0x0                   	// #0
+   0x0000000000400abc <+112>:	ret
+
+```
+
 
 ## Common Problems 
 1. When `sudo apt install qemu-user`, terminal shows that somepackages fail to be downloaded due to 404 error.
