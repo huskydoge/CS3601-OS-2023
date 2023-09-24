@@ -271,6 +271,34 @@ End of assembler dump.
 
 ```
 
+#### read_8_numbers
+
+```assembly
+0x0000000000400b7c <+0>:	sub	sp, sp, #0x20
+   0x0000000000400b80 <+4>:	stp	x29, x30, [sp, #16]
+   0x0000000000400b84 <+8>:	add	x29, sp, #0x10
+   0x0000000000400b88 <+12>:	mov	x2, x1
+   0x0000000000400b8c <+16>:	add	x1, x1, #0x1c
+   0x0000000000400b90 <+20>:	str	x1, [sp, #8]
+   0x0000000000400b94 <+24>:	add	x1, x2, #0x18
+   0x0000000000400b98 <+28>:	str	x1, [sp]
+   0x0000000000400b9c <+32>:	add	x7, x2, #0x14
+   0x0000000000400ba0 <+36>:	add	x6, x2, #0x10
+   0x0000000000400ba4 <+40>:	add	x5, x2, #0xc
+   0x0000000000400ba8 <+44>:	add	x4, x2, #0x8
+   0x0000000000400bac <+48>:	add	x3, x2, #0x4
+   0x0000000000400bb0 <+52>:	adrp	x1, 0x464000 <free_mem+64>
+   0x0000000000400bb4 <+56>:	add	x1, x1, #0x838
+=> 0x0000000000400bb8 <+60>:	bl	0x406d80 <__isoc99_sscanf>
+   0x0000000000400bbc <+64>:	cmp	w0, #0x7
+   0x0000000000400bc0 <+68>:	b.le	0x400bd0 <read_8_numbers+84>
+   0x0000000000400bc4 <+72>:	ldp	x29, x30, [sp, #16]
+   0x0000000000400bc8 <+76>:	add	sp, sp, #0x20
+   0x0000000000400bcc <+80>:	ret
+   0x0000000000400bd0 <+84>:	bl	0x400af4 <explode>
+
+```
+
 ## Common Problems 
 1. When `sudo apt install qemu-user`, terminal shows that somepackages fail to be downloaded due to 404 error.
    
