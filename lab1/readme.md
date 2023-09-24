@@ -384,7 +384,7 @@ End of assembler dump.
    0x0000000000400a14 <+48>:	mov	x0, x19 // *x19 = *x1 = *x0, after strcpy
    0x0000000000400a18 <+52>:	bl	0x400964 <encrypt_method2>
    0x0000000000400a1c <+56>:	adrp	x0, 0x4a0000
-   0x0000000000400a20 <+60>:	ldr	x1, [x0, #104]
+   0x0000000000400a20 <+60>:	ldr	x1, [x0, #104] // x/s $x1 = isggstsvkw
    0x0000000000400a24 <+64>:	mov	x0, x19
    0x0000000000400a28 <+68>:	bl	0x421b80 <strcmp>
    0x0000000000400a2c <+72>:	cbnz	w0, 0x400a44 <phase_4+96>
@@ -461,17 +461,17 @@ End of assembler dump.
    0x0000000000400988 <+36>:	add	x22, x22, #0x58 \\ after, x/s $x22 = '\020HF'
    0x000000000040098c <+40>:	b	0x4009b0 <encrypt_method2+76>
    0x0000000000400990 <+44>:	ldrb	w1, [x20]
-   0x0000000000400994 <+48>:	ldr	x0, [x22, #8]
+   0x0000000000400994 <+48>:	ldr	x0, [x22, #8] // x/s $x0 = qwertyuiopasdfghjklzxcvbnm
    0x0000000000400998 <+52>:	add	x0, x0, x1
    0x000000000040099c <+56>:	ldurb	w0, [x0, #-97]
-   0x00000000004009a0 <+60>:	strb	w0, [x20]
-   0x00000000004009a4 <+64>:	add	x19, x19, #0x1
-   0x00000000004009a8 <+68>:	cmp	x19, x21
+   0x00000000004009a0 <+60>:	strb	w0, [x20] // use char w0 to replace the str encoded by ecryptmethod1 at index 0
+   0x00000000004009a4 <+64>:	add	x19, x19, #0x1 
+   0x00000000004009a8 <+68>:	cmp	x19, x21 // x21 is the length of the string
    0x00000000004009ac <+72>:	b.eq	0x4009d0 <encrypt_method2+108>  // b.none
    0x00000000004009b0 <+76>:	mov	x20, x19  // before this op, x20 = 3
-   0x00000000004009b4 <+80>:	ldrb	w0, [x19]
+   0x00000000004009b4 <+80>:	ldrb	w0, [x19]  // x19 is the string remained to be encoded, load s19[0] to w0
    0x00000000004009b8 <+84>:	sub	w0, w0, #0x61
-   0x00000000004009bc <+88>:	and	w0, w0, #0xff
+   0x00000000004009bc <+88>:	and	w0, w0, #0xff // get the char's distance to 'a', like 'c' - 'a' = 2
    0x00000000004009c0 <+92>:	cmp	w0, #0x19
    0x00000000004009c4 <+96>:	b.ls	0x400990 <encrypt_method2+44>  // b.plast
    0x00000000004009c8 <+100>:	bl	0x400af4 <explode>
@@ -483,8 +483,11 @@ End of assembler dump.
    0x00000000004009e0 <+124>:	ret
 
 ```
+input string -> encode1 -> encode2 = encoded string: `isggstsvkw`
 
-qwertyuiopasdfghjklzxcvbnm
+* encoder1: For a string, if the length is odd, it is truncated to even. Then take all the odd digits and put them at the top (starting with the left to right subscript 1), and then take all the even digits
+* encoder2: char map, key: `qwertyuiopasdfghjklzxcvbnm`, x = 97 + key.index(char), char is in the encoded string, x is originial string after encoder1.
+
 
 ## Common Problems 
 1. When `sudo apt install qemu-user`, terminal shows that somepackages fail to be downloaded due to 404 error.
