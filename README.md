@@ -1,7 +1,7 @@
 # CS3601-OS-2023
 Shanghai Jiao Tong University 2023-2024, CS3601 Operating System
 
-**All rights of lectures content reserved by [Institute of Parallel and Distributed Systems](https://ipads.se.sjtu.edu.cn/), Shanghai Jiao Tong University**
+**All rights of lectures content reserved by [Institute of Parallel and Distributed Systems](https://ipads.se.sjtu.edu.cn/), Shanghai Jiao Tong University**.
 
 ### Instructor
 * [Yubin Xia](https://ipads.se.sjtu.edu.cn/zh/pub/members/yubin_xia/), Professor
