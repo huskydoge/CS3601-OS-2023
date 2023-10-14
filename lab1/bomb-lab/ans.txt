@@ -1,6 +1,0 @@
-2022
-KISS: Keep It Simple, Stupid.
-1 1 4 7 13 22 37 61
-2 2
-helloworlb
-90
