@@ -96,7 +96,7 @@ orr x8, x8, #SCTLR_EL1_M
 **练习题 9：请在 `init_kernel_pt` 函数的 `LAB 1 TODO 5` 处配置内核高地址页表（`boot_ttbr1_l0`、`boot_ttbr1_l1` 和 `boot_ttbr1_l2`），以 2MB 粒度映射。**
 
 ```c
- /* TTBR1_EL1 0-1G */
+        /* TTBR1_EL1 0-1G */
         /* LAB 1 TODO 5 BEGIN */
         /* Step 1: set L0 and L1 page table entry */
         /* BLANK BEGIN */
@@ -111,7 +111,7 @@ orr x8, x8, #SCTLR_EL1_M
         /* BLANK BEGIN */
         for (; vaddr < KERNEL_VADDR + PERIPHERAL_BASE; vaddr += SIZE_2M) {
                 boot_ttbr1_l2[GET_L2_INDEX(vaddr)] =
-                        (vaddr - KERNEL_VADDR) /* low mem, va = pa */
+                        (vaddr - KERNEL_VADDR) /* high mem, va - KERNEL_VADDR  = pa */
                         | UXN /* Unprivileged execute never */
                         | ACCESSED /* Set access flag */
                         | NG /* Mark as not global */
@@ -125,7 +125,7 @@ orr x8, x8, #SCTLR_EL1_M
         /* BLANK BEGIN */
         for (vaddr = PERIPHERAL_BASE + KERNEL_VADDR; vaddr < KERNEL_VADDR + PHYSMEM_END; vaddr += SIZE_2M) {
                 boot_ttbr1_l2[GET_L2_INDEX(vaddr)] =
-                        (vaddr - KERNEL_VADDR) /* low mem, va = pa */
+                        (vaddr - KERNEL_VADDR) /* high mem, va - KERNEL_VADDR = pa */
                         | UXN /* Unprivileged execute never */
                         | ACCESSED /* Set access flag */
                         | NG /* Mark as not global */
