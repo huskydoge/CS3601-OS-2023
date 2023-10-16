@@ -1,10 +1,8 @@
 # Reading Notes
 
-[TOC]
 
 
-
-### Overview of the Arm Architecture
+## Overview of the Arm Architecture
 
 The processor must be in the **correct execution state** for the instructions it is executing.
 
@@ -101,3 +99,24 @@ A “word” on x86 is 16-bits and a “doubleword” is 32-bits. **A “word”
 ### Data Alignment (?)
 
 <div style="color: red"><u>The alignment of sp must be two times the size of a pointer. For AArch32 that’s 8 bytes, and for AArch64 it’s 16 bytes.</u></div>
+
+
+
+## Start gdb
+
+By following the steps in README.md, you may notice that your gdb fails to render the graphical interfaces. To solve this, just `cd home/os` and `vim .gdb init`, then add a line `add-auto-load-safe-path /home/os/OS-Course-Lab/,gdbinit` and retry.
+
+
+
+### Single Thread
+
+```assembly
+(gdb) set scheduler-locking on
+```
+
+`set scheduler-locking` 命令除了支持`off`和`on`模式外（默认是`off`），还有一个`step`模式。含义是：当用"`step`"命令调试线程时，其它线程不会执行，但是用其它命令（比如"`next`"）调试线程时，其它线程也许会执行。
+
+这个命令依赖于具体操作系统的调度策略，使用时需注意。参见[gdb手册](https://sourceware.org/gdb/onlinedocs/gdb/All_002dStop-Mode.html#All_002dStop-Mode).
+
+
+
