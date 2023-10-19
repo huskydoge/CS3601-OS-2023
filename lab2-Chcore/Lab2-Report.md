@@ -142,15 +142,13 @@ orr x8, x8, #SCTLR_EL1_M
 
 **思考题 10：请思考在 `init_kernel_pt` 函数中为什么还要为低地址配置页表，并尝试验证自己的解释。**
 
-因为在启动mmu的 `el1_mmu_activate `函数中设置sctlr_el1后，chcore将使用虚拟地址，然而下一条指令仍位于低地址空间，使得chcore无法继续初始化。
+因为在启动mmu的 `el1_mmu_activate `函数中设置 `sctlr_el1` 后，chcore将使用虚拟地址，然而下一条指令仍位于低地址空间，使得chcore无法继续初始化。
 
-验证：删除掉低地址配置代码后，chcore停止在`[BOOT] Install kernel page table`, 同时gdb显示进入`invalidate_cache_all`.
+验证：删除掉低地址配置代码后进入 `gdb` 将断点打在 `el1_mmu_activate` 函数，然后进行几步 `si`，chcore停止在`[BOOT] Install kernel page table`, 同时gdb显示进入`invalidate_cache_all`.
 
 ![output](https://p.ipic.vip/d6kn5n.png)
 
-![gdb](https://p.ipic.vip/ghl7bx.png)
-
-
+![gdb](https://p.ipic.vip/ghl7bx.png)如果将断点打在 `main`  函数，则输入 `ctrl + c` 后会显示 `cannot access memory at address 0x200 `![截屏2023-10-19 16.11.35](../../../Library/Application%20Support/typora-user-images/%E6%88%AA%E5%B1%8F2023-10-19%2016.11.35.png)
 
 [^1]: https://zhuanlan.zhihu.com/p/453687153
 [^2]: https://blog.csdn.net/weixin_44073864/article/details/111192476
