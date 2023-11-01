@@ -10,6 +10,7 @@ Shanghai Jiao Tong University 2023-2024, CS3601 Operating System
 ### Textbook and References
 
 * [现代操作系统](https://libgen.li/ads.php?md5=38B25407BFB3AA5DE86EB071B1753D01)，陈海波 / 夏虞斌
+* [IPADS课程官网](https://ipads.se.sjtu.edu.cn/courses/os/prior.shtml)
 
 
 
