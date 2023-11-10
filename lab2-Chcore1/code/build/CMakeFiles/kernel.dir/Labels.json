@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/os/OS-Course-Lab/build/CMakeFiles/kernel"
+		},
+		{
+			"file" : "/home/os/OS-Course-Lab/build/CMakeFiles/kernel.rule"
+		},
+		{
+			"file" : "/home/os/OS-Course-Lab/build/CMakeFiles/kernel-complete.rule"
+		},
+		{
+			"file" : "/home/os/OS-Course-Lab/build/kernel-prefix/src/kernel-stamp/kernel-install.rule"
+		},
+		{
+			"file" : "/home/os/OS-Course-Lab/build/kernel-prefix/src/kernel-stamp/kernel-mkdir.rule"
+		},
+		{
+			"file" : "/home/os/OS-Course-Lab/build/kernel-prefix/src/kernel-stamp/kernel-download.rule"
+		},
+		{
+			"file" : "/home/os/OS-Course-Lab/build/kernel-prefix/src/kernel-stamp/kernel-update.rule"
+		},
+		{
+			"file" : "/home/os/OS-Course-Lab/build/kernel-prefix/src/kernel-stamp/kernel-patch.rule"
+		},
+		{
+			"file" : "/home/os/OS-Course-Lab/build/kernel-prefix/src/kernel-stamp/kernel-configure.rule"
+		},
+		{
+			"file" : "/home/os/OS-Course-Lab/build/kernel-prefix/src/kernel-stamp/kernel-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"kernel"
+		],
+		"name" : "kernel"
+	}
+}

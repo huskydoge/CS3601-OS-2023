@@ -1,6 +1,0 @@
-/home/os/OS-Course-Lab/build/CMakeFiles/rebuild_cache.dir
-/home/os/OS-Course-Lab/build/CMakeFiles/edit_cache.dir
-/home/os/OS-Course-Lab/build/CMakeFiles/clean-all.dir
-/home/os/OS-Course-Lab/build/CMakeFiles/update-submodules.dir
-/home/os/OS-Course-Lab/build/CMakeFiles/kernel.dir
-/home/os/OS-Course-Lab/build/CMakeFiles/kernel-clean-incbin.dir

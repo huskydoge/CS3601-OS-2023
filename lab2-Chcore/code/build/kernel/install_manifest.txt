@@ -1,4 +1,0 @@
-/home/os/OS-Course-Lab/build/kernel.img
-/home/os/OS-Course-Lab/build/kernel8.img
-/home/os/OS-Course-Lab/build/emulate.sh
-/home/os/OS-Course-Lab/build/simulate.sh
