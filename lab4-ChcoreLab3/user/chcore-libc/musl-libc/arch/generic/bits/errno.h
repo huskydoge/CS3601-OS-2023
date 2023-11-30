@@ -1,0 +1,1 @@
+/home/os/Downloads/OS-Course-Lab/user/chcore-libc/libchcore/porting/overrides/arch/generic/bits/errno.h
