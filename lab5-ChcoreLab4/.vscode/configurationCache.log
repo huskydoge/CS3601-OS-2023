@@ -1,0 +1,1 @@
+{"buildTargets":["all","build","clean","defconfig","distclean","gdb","grade","qemu","qemu-gdb"],"launchTargets":["Makefile | /Users/husky/Three-Year-Aut/CS3601-OS-2023/lab5-ChcoreLab4>a.out()"],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

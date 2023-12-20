@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/husky/Three-Year-Aut/CS3601-OS-2023/lab5-ChcoreLab4'
+test -f ./.config || ./chbuild defconfig
+./chbuild build
+make: Leaving directory `/Users/husky/Three-Year-Aut/CS3601-OS-2023/lab5-ChcoreLab4'
+ 
