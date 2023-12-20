@@ -12,8 +12,12 @@ Shanghai Jiao Tong University 2023-2024, CS3601 Operating System
 * [现代操作系统](https://libgen.li/ads.php?md5=38B25407BFB3AA5DE86EB071B1753D01)，陈海波 / 夏虞斌
 * [IPADS课程官网](https://ipads.se.sjtu.edu.cn/courses/os/prior.shtml)
 
+### Lab Notes
+
+`ctrl + A -> x` to terminate `qemu`
 
 
+**************
 
 **At present, all the tools we provide need to run under the x86_64 architecture. Students who use M1/M2 may need to prepare an x86_64 operating environment.**
 
