@@ -1,1 +1,0 @@
-/home/os/OS-Course-Lab/user/chcore-libc/libchcore/porting/overrides/src/thread/x86_64/__set_thread_area.s

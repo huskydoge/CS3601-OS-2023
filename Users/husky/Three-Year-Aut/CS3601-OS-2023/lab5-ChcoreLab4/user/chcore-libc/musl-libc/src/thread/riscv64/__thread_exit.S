@@ -1,1 +1,0 @@
-/home/os/OS-Course-Lab/user/chcore-libc/libchcore/porting/overrides/src/thread/riscv64/__thread_exit.S
